@@ -1,0 +1,25 @@
+.container{
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--medium-grey);
+
+    &>.circle{
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+    }
+}
+
+.task-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
