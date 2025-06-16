@@ -100,6 +100,11 @@ body{
   --popup-bg-color: var(--white);
   
   --edit-btn-bg-color: var(--white);
+
+  --subtask-bg-color: var(--light-grey);
+  --subtask-color: var(--black);
+  --custom-checkbox-bg-color: var(--white);
+  --custom-checkbox-bg-color-checked: var(--white);
 }
 
 body.dark-mode{
@@ -136,9 +141,14 @@ body.dark-mode{
   --input-legend-color: var(--white);
   --input-color: var(--white);
 
-   --popup-bg-color: var(--dark-grey);
+  --popup-bg-color: var(--dark-grey);
 
-   --edit-btn-bg-color: var(--very-dark-grey);
+  --edit-btn-bg-color: var(--very-dark-grey);
+
+  --subtask-bg-color: var(--very-dark-grey);
+  --subtask-color: var(--white);
+  --custom-checkbox-bg-color: var(--dark-grey);
+  --custom-checkbox-bg-color-checked: var(--white);
 }
 
 

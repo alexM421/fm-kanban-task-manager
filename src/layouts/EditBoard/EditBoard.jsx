@@ -7,19 +7,21 @@ import Button from "../../components/Button/Button";
 import PopUpBackground from "../../components/PopUpBackground/PopUpBackground";
 import { useDataContext } from "../../contexts/DataContext";
 import useDisplayHandler from "../../hooks/useDisplayHandler";
+import FindBoard from "../../features/findBoard";
 
 export default function EditBoard ({ setDisplayEditBtn }) {
 
     const {setData} = useDataContext()
 
-    const [newBoard, setNewBoard] = React.useState({
-        name: "",
-        columns: []
-    })
+    const boardData = FindBoard().board
+    const boardIndex = FindBoard().index   
+
+    const [currentBoard, setCurrentBoard] = React.useState(boardData)
+    
 
     //Title onchange handler
     const setText = (e) => {
-        setNewBoard(prevState => ({...prevState, name: e.target.value}))
+        setCurrentBoard(prevState => ({...prevState, name: e.target.value}))
     } 
 
     //Handling Window Display
@@ -29,13 +31,13 @@ export default function EditBoard ({ setDisplayEditBtn }) {
     displayHandler(containerRef,setDisplayEditBtn)
 
     const handleSubmit = (e) => {
-        if(!newBoard.name || !newBoard.columns.every(col => col.name)){
+        if(!currentBoard.name || !currentBoard.columns.every(col => col.name)){
             console.log("Error")
             return
         }
         setData(prevData => {
             const toUpdateArr = [...prevData.boards]
-            toUpdateArr.push(newBoard)
+            toUpdateArr[boardIndex] = currentBoard
             setDisplayEditBtn(false)
             return({
                 boards: toUpdateArr
@@ -46,17 +48,17 @@ export default function EditBoard ({ setDisplayEditBtn }) {
     return(
         <>
             <div className={styles.container} ref={containerRef}>
-                <h1 className="h-l">Add New Board</h1>
+                <h1 className="h-l">{`Edit Board`}</h1>
                 <TextInput
                     name="Title"
                     placeholder="e.g. Take coffee break"
-                    text={newBoard.name}
+                    text={currentBoard.name}
                     setText={setText}
                 />
                 <form className={styles.form}>
-                    <ColumnInput newBoard={newBoard} setNewBoard={setNewBoard}/>
+                    <ColumnInput newBoard={currentBoard} setNewBoard={setCurrentBoard}/>
                 </form>
-                <Button variant="primary-s" onClick={handleSubmit}>Create New Board</Button>
+                <Button variant="primary-s" onClick={handleSubmit}>Save changes</Button>
             </div>
             <PopUpBackground/>
         </>

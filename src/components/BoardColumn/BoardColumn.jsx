@@ -3,7 +3,7 @@ import styles from "./BoardColumn.module.css"
 import TaskCard from "../TaskCard/TaskCard";
 
 
-export default function BoardColumn ( { columnData, index }) {
+export default function BoardColumn ( { columnData, index, setColumnData, displayTask, setDisplayTask }) {
 
     const colors = [
         "#FF6B6B",
@@ -25,7 +25,32 @@ export default function BoardColumn ( { columnData, index }) {
         return colors[index]
     }
 
-    const taskCards = columnData.tasks.map((task,index) => <TaskCard taskData={task} key={`task-${index}`}/>)
+    const setTaskData = (newTaskData, taskIndex) => {
+
+        const updatedTaskArr = [...columnData.tasks]
+        //Updating task data
+        updatedTaskArr[taskIndex] = newTaskData
+
+        const newColumnData = {
+            ...columnData,
+            tasks: updatedTaskArr,            
+        }
+
+
+        setColumnData(newColumnData, index)
+    }
+
+
+    const taskCards = columnData.tasks.map((task,index) => 
+        <TaskCard 
+            status={columnData.name} 
+            taskData={task} 
+            index={index} 
+            setTaskData={setTaskData} 
+            key={`task-${task.title}`}
+            displayTask={displayTask}
+            setDisplayTask={setDisplayTask}
+            />)
 
     return(
         <div className={styles.container}>

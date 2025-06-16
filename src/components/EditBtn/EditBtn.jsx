@@ -10,25 +10,26 @@ import EditBoard from "../../layouts/EditBoard/EditBoard"
 export default function EditBtn ({variant="board"}) {
 
     const [displayEditBtn, setDisplayEditBtn] = React.useState(false)
+    const [displayEllipsisWIndow, setDisplayEllipsisWindow] = React.useState(false)
     const [displayDeleteBtn, setDisplayDeleteBtn] = React.useState(false)
 
     const toggleDisplayEditBtn = () => {setDisplayEditBtn(prevState => !prevState)}
     const toggleDisplayDeleteBtn = () => {setDisplayDeleteBtn(prevState => !prevState)}
-
+    const toggleDisplayEllipsisWindow = () => {setDisplayEllipsisWindow(prevState => !prevState)}
 
     const containerRef = React.useRef(undefined)
     const ellipsisRef = React.useRef(undefined)
     const displayHandler = useDisplayHandler()
     
-    displayHandler(containerRef, setDisplayEditBtn, ellipsisRef)
+    displayHandler(containerRef, setDisplayEllipsisWindow, ellipsisRef)
     
     return(
         <div className={styles.container}>
-            <button className={styles.ellipsis} onClick={toggleDisplayEditBtn} ref={ellipsisRef}>
+            <button className={styles.ellipsis} onClick={toggleDisplayEllipsisWindow} ref={ellipsisRef}>
                 <IconEllipsis/>
             </button>
-            <div className={`${styles.btns} ${!displayEditBtn? styles.hidden:""}`} ref={containerRef}>
-                <button className="b-l">Edit Board</button>
+            <div className={`${styles.btns} ${!displayEllipsisWIndow? styles.hidden:""}`} ref={containerRef}>
+                <button className="b-l" onClick={toggleDisplayEditBtn}>Edit Board</button>
                 <button className="b-l" onClick={toggleDisplayDeleteBtn}>Delete Board</button>   
             </div>
             {displayDeleteBtn && createPortal(<DeleteBoard setDisplayDelete={setDisplayDeleteBtn}/>,document.body)}
