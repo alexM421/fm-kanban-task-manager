@@ -1,0 +1,50 @@
+.container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &>p{    
+        color: var(--input-legend-color);
+    }
+}
+
+.input-container{
+    position: relative;
+    
+    &>textarea{
+        width: 100%;
+        border: 1px solid #828FA340;
+        border-radius: 4px;
+        padding: 8px 16px;
+        color: var(--input-color);
+        background-color: transparent;
+        resize: none;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        &::placeholder{
+            color: var(--input-color);
+            opacity: 0.25;
+        }
+
+        &:focus{
+            outline: none;
+        }
+
+        &.err{
+            border-color: var(--red);
+        }
+    }
+}
+
+
+.err-txt{
+    color: var(--red);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+}

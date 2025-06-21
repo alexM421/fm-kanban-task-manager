@@ -1,0 +1,76 @@
+.container{
+    height: 96px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 24px;
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-color);
+    border-bottom: 1px solid var(--lines);
+}
+
+@media screen and (max-height: 1024px) {
+    .container{
+        height: 80px;
+    }
+}
+
+@media screen and (max-height: 760px){
+    .container{
+        height: 64px;
+    }
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    transition: gap ease 0.5s;
+
+    &>.logo-div{
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        overflow: hidden;
+        transition: max-width ease 0.5s;
+        max-width: 300px;
+        &>.line{
+            border-left: 1px solid var(--lines);
+            height: 96px;
+        }
+    }
+}
+
+@media screen and (max-height: 1024px) {
+   .left > h1{
+        font-size: 20px;
+    }
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    &.disable-btns>*{
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+.sidebar-shown{
+
+    /* padding-left: 0px; */
+
+    &>.left{
+        gap: 0px;
+        &>.logo-div{
+            max-width: 0px;
+        }
+    }
+
+}
+
+.edit-btn-container{
+    position: relative;
+}

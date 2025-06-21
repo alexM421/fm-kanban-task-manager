@@ -1,0 +1,25 @@
+.container{
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 480px;
+    padding: 32px;
+    border-radius: 6px;
+    background-color: var(--popup-bg-color);
+    color: var(--input-color);
+
+    &>a>button{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 760px){
+    .container{
+        width: calc(100% - 32px);
+    }
+}

@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &>p{
+        color: var(--input-legend-color)
+    }
+}
+
+.elements-list{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &>a>button{
+        width: 100%;
+    }
+}
+
+
+.element-input{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &>.delete-btn{
+        &>svg{
+            color: var(--medium-grey);
+            &:hover{
+                cursor: pointer;
+                color: var(--red);
+            }
+        }
+    }
+}

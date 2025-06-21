@@ -1,0 +1,56 @@
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    width: 480px;
+    padding: 32px;
+    border-radius: 6px;
+    background-color: var(--popup-bg-color);
+    color: var(--subtask-color);
+
+    &>p{
+        color: var(--medium-grey)
+    }
+}
+
+@media screen and (max-width: 760px){
+    .container{
+        width: calc(100% - 32px);
+    }
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtasks{
+    display: flex;
+    flex-direction: column;
+    color: var(--medium-grey);
+    gap: 16px;
+}
+
+.current-status{
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    &>p{
+        color: var(--medium-grey)
+    }
+}
+
+.subtasks-list{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

@@ -1,0 +1,34 @@
+.container{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 0px 14px 32px;
+    color: var(--medium-grey);
+    background-color: transparent;
+    color: var(--sidebar-item-color);
+    border-bottom-right-radius: 100px;
+    border-top-right-radius: 100px;
+    transition: background-color ease 0.3s,
+                color ease 0.3s,
+                padding ease 0.3s;
+
+    &:hover{
+        cursor: pointer;
+        
+        &:not(.selected){
+            color: var(--main-purple);
+            background-color: var(--sidebar-item-bg-color-hover);
+            padding-left: 64px;
+        }
+    }
+}
+
+.selected{
+    background-color: var(--sidebar-item-bg-color-selected);
+    color: var(--sidebar-item-color-selected);
+
+}
+
+.button{
+    color: var(--sidebar-item-color-create);
+}

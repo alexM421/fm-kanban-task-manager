@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/*Fonts presets*/
+
+.h-xl{
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.h-l{
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: bold;
+}
+
+.h-m{
+  font-size: 15px;
+  line-height: 19px;
+  font-weight: bold;
+}
+
+.h-s{
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
+  letter-spacing: 2.4px;
+}
+
+.b-l{
+  font-size: 13px;
+  line-height: 23px;
+  font-weight: 500;
+}
+
+.b-m{
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
+}
+
+/*Colors*/
+
+:root{
+  --main-purple: #635FC7;
+  --main-purple-hover: #A8A4FF;
+
+  --black: #000112;
+
+  --very-dark-grey: #20212C;
+  --dark-grey: #2B2C37;
+  --medium-grey: #828FA3;
+  --light-grey: #F4F7FD;
+
+  --lines-dark: #3E3F4E;
+  --lines-light: #E4EBFA;
+  
+  --white: white;
+  
+  --red: #EA5555;
+  --red-hover: #FF9898;
+}
+
+/*Default Light Theme*/
+
+body{
+
+  background-color: var(--light-grey);
+
+  --lines: var(--lines-light);
+
+  --primary-color: var(--white);
+  --primary-bg-color: var(--main-purple);
+  --primary-bg-color-hover: var(--main-purple-hover);
+  
+  --secondary-color: var(--main-purple);
+  --secondary-bg-color: #635FC718;
+  --secondary-bg-color-hover: #635FC740;
+
+  --navbar-bg-color: var(--white);
+  --navbar-color: var(--black);
+
+  --sidebar-logo-color: var(--black);
+  --sidebar-bg-color: var(--white);
+  --sidebar-item-color: var(--medium-grey);
+  --sidebar-item-bg-color-selected: var(--main-purple);
+  --sidebar-item-color-selected: var(--white);
+  --sidebar-item-color-create: var(--main-purple);
+  --sidebar-item-bg-color-hover: #97979719;
+
+  --theme-switch-bg-color: var(--light-grey);
+  --theme-switch-btn-bg-color: var(--main-purple);
+
+  --board-bg-color: var(--light-grey);
+  --board-new-col-bg-color: linear-gradient(#E9EFFA, #E9EFFA80);
+
+  --task-card-color: var(--black);
+  --task-card-bg-color: var(--white);
+
+  --input-legend-color: var(--medium-grey);
+  --input-color: var(--black);
+
+  --popup-bg-color: var(--white);
+  
+  --edit-btn-bg-color: var(--white);
+
+  --subtask-bg-color: var(--light-grey);
+  --subtask-color: var(--black);
+  --custom-checkbox-bg-color: var(--white);
+  --custom-checkbox-bg-color-checked: var(--white);
+}
+
+body.dark-mode{
+
+  background-color: var(--very-dark-grey);
+
+  --lines: var(--lines-dark);
+
+  --primary-color: var(--white);
+  --primary-bg-color: var(--main-purple);
+  --primary-bg-color-hover: var(--main-purple-hover);
+
+  --secondary-color: var(--main-purple);
+  --secondary-bg-color: var(--white);
+  --secondary-bg-color-hover: var(--white);
+
+  --navbar-bg-color: var(--dark-grey);
+  --navbar-color: var(--white);
+
+  --sidebar-logo-color: var(--white);
+  --sidebar-bg-color: var(--dark-grey);
+  --sidebar-item-color: var(--medium-grey);
+  --sidebar-item-bg-color-selected: var(--main-purple);
+  --sidebar-item-color-selected: var(--white);
+  --sidebar-item-color-create: var(--main-purple);
+  --sidebar-item-bg-color-hover: var(--white);
+
+  --theme-switch-bg-color: var(--very-dark-grey);
+  --theme-switch-btn-bg-color: var(--main-purple);
+
+  --board-bg-color: var(--very-dark-grey);
+  --board-new-col-bg-color: linear-gradient(#2B2C37, #2B2C3780);
+
+  --task-card-color: var(--white);
+  --task-card-bg-color: var(--dark-grey);
+
+  --input-legend-color: var(--white);
+  --input-color: var(--white);
+
+  --popup-bg-color: var(--dark-grey);
+
+  --edit-btn-bg-color: var(--very-dark-grey);
+
+  --subtask-bg-color: var(--very-dark-grey);
+  --subtask-color: var(--white);
+  --custom-checkbox-bg-color: var(--dark-grey);
+  --custom-checkbox-bg-color-checked: var(--white);
+}
+
+
+/*Defaults*/  
+
+body{
+  position: relative;
+  max-height: 100vh;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans";
+  transition: color ease 0.3s, background-color ease 0.3s, border-color ease 0.3s;
+}
