@@ -7,7 +7,7 @@ import { useDataContext } from "../../contexts/DataContext";
 import TextInput from "../../shared/TextInput/TextInput"
 import Button from "../../shared/Button/Button";
 //features
-import PopUpBackground from "../../features/modals/PopUpBackground/PopUpBackground";
+import PopUpBackground from "../../features/Modals/PopUpBackground/PopUpBackground";
 import TextInputsDeletable from "../../features/Modals/TextInputsDeletable/TextInputsDeletable";
 //hooks
 import useDisplayHandler from "../../hooks/useDisplayHandler/useDisplayHandler";

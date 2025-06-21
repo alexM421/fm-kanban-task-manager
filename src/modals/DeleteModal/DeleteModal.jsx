@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./DeleteModal.module.css"
 //features
-import PopUpBackground from "../../features/modals/PopUpBackground/PopUpBackground";
+import PopUpBackground from "../../features/Modals/PopUpBackground/PopUpBackground";
 //shared
 import Button from "../../shared/Button/Button";
 //hooks

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./TaskModal.module.css"
 //features
-import PopUpBackground from "../../features/modals/PopUpBackground/PopUpBackground";
+import PopUpBackground from "../../features/Modals/PopUpBackground/PopUpBackground";
 //components
 import EditBtn from "../../components/EditBtn/EditBtn";
 import Subtask from "../../components/Subtask/Subtask";

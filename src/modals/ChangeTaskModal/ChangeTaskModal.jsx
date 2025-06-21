@@ -10,7 +10,7 @@ import Button from "../../shared/Button/Button";
 import TextAreaInput from "../../shared/TextAreaInput/TextAreaInput";
 import CustomSelect from "../../shared/CustomSelect/CustomSelect";
 //features
-import PopUpBackground from "../../features/modals/PopUpBackground/PopUpBackground";
+import PopUpBackground from "../../features/Modals/PopUpBackground/PopUpBackground";
 import TextInputsDeletable from "../../features/Modals/TextInputsDeletable/TextInputsDeletable";
 import useAddTaskSubmit from "../../features/Modals/useAddTaskSubmit/useAddTaskSubmit";
 import useEditTaskSubmit from "../../features/Modals/useEditTaskSubmit/useEditTaskSubmit";
