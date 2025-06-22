@@ -38,7 +38,7 @@ export default function Sidebar ({ isHidden, setIsHidden }) {
             <div className={styles.top}>
                 <Logo/>
                 <div className={styles.boards}>
-                    <h1 className="h-s">All boards (3)</h1>
+                    <h1 className="h-s">{`All Boards(${data.boards.length})`}</h1>
                     <div className={styles["board-list"]}>
                         {data.boards.map((board) => 
                             <SidebarBoardItem

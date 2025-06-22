@@ -44,7 +44,7 @@ export default function Navbar ( { sidebarHidden }) {
                 <Logo/>
                 <div className={styles.line}></div>
             </div>
-            <h1 className="h-xl">{boardData.name}</h1>
+            <h1 className="h-xl">{boardData?.name || ""}</h1>
         </>
 
     const mobileLayout = 
