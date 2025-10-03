@@ -61,7 +61,7 @@ export default function MobileSidebar () {
         <div className={styles.container}>
             <div className={`${styles.btn} ${displaySidebar? styles["chevron-up"]:""}`}  ref={btnRef}  onClick={() => toggleState(setDisplaySidebar)}>
                 <img src="/assets/logo-mobile.svg"/>
-                <h1 className="h-l">{boardData.name}</h1>
+                <h1 className="h-l">{boardData?.name || ""}</h1>
                 <IconChevronDown/>
             </div>
             <div className={`${styles.sidebar} ${!displaySidebar? styles.hidden:""}`} ref={sidebarRef}>
