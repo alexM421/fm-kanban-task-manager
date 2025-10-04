@@ -23,7 +23,10 @@ export default function Board ({isSidebarActive}) {
     const noBoardData = 
         <div className={styles["no-data"]}>
             <h1 className="h-l">This board is empty. Create a new column to get started.</h1>
-            <Button variant="primary">+ Add New Column</Button>   
+            <Button 
+                variant="primary"
+                onClick={() => toggleState(setDisplayEditModal)}
+            >+ Add New Column</Button>   
         </div>
     
     const boardColumns = boardData?.columns.map((column,index) => 

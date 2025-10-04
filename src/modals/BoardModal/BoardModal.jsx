@@ -12,11 +12,14 @@ import TextInputsDeletable from "../../features/Modals/TextInputsDeletable/TextI
 //hooks
 import useDisplayHandler from "../../hooks/useDisplayHandler/useDisplayHandler";
 import useBoardBySlug from "../../hooks/useBoardBySlug/useBoardBySlug";
-import { useLocation, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { slugify } from "../../utils/utils";
 
 export default function BoardModal ({ setDisplayModal, variant="add", boardData }) {
 
     const { setData } = useDataContext()
+
+    const navigate = useNavigate()
 
     const [localData, setLocalData] = React.useState({name: "", columns: [], id: nanoid()})
 
@@ -38,6 +41,7 @@ export default function BoardModal ({ setDisplayModal, variant="add", boardData 
 
     //handleDataSubmit
     const handleSubmit = (e) => {
+        e.preventDefault()
         if(!localData.name || !localData.columns.every(col => col.name)){
             console.log("Error")
             return
@@ -54,6 +58,7 @@ export default function BoardModal ({ setDisplayModal, variant="add", boardData 
             })
         })
 
+        navigate(`/${slugify(localData.name)}`)
         setDisplayModal(false)
     }
 
